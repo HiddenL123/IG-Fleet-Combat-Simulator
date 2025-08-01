@@ -13,7 +13,6 @@ const FLEET_STATS = [
 export class FleetUI {
   constructor(name) {
     this.name = name;
-    console.log('Creating FleetUI for:', name);
     this.inputs = {};
     this.title = null;
     this.container = this.createFleetUI();

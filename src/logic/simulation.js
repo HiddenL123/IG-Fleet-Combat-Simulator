@@ -172,7 +172,7 @@ export class Simulator {
 
     ctx.clearRect(0, 0, canvas.clientWidth, canvas.clientHeight);
 
-    const margin = { top: 20, right: 20, bottom: 30, left: 40 };
+    const margin = { top: 20, right: 20, bottom: 30, left: 80 };
     const plotWidth = canvas.clientWidth - margin.left - margin.right;
     const plotHeight = canvas.clientHeight - margin.top - margin.bottom;
 
