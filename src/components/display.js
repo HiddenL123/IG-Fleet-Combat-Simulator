@@ -1,7 +1,7 @@
 import { FleetUI } from './fleet.js';
 import { CompareUI } from './compare.js';
-export let fleet1Persistent = new FleetUI();
-export let fleet2Persistent = new FleetUI();
+export let fleet1Persistent = new FleetUI('Fleet 1');
+export let fleet2Persistent = new FleetUI('Fleet 2');
 export let compareUI = null;
 
 export function renderFeatureContent(featureId) {
