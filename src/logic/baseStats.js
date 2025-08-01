@@ -11,6 +11,7 @@ export const baseStats = {
       "attack_per_hit": 19,
       "range": 5,
       "type": "missile",
+      "class": "frigates",
       "power": 92
     },
     "tier_10": {
@@ -24,6 +25,7 @@ export const baseStats = {
       "attack_per_hit": 49,
       "range": 5,
       "type": "kinetic",
+      "class": "frigates",
       "power": 833
     },
     "tier_11": {
@@ -37,6 +39,7 @@ export const baseStats = {
       "attack_per_hit": 53,
       "range": 5,
       "type": "missile",
+      "class": "frigates",
       "power": 961
     },
     "tier_12": {
@@ -50,6 +53,7 @@ export const baseStats = {
       "attack_per_hit": 57,
       "range": 5,
       "type": "kinetic",
+      "class": "frigates",
       "power": 1098
     }
   },
@@ -65,6 +69,7 @@ export const baseStats = {
       "attack_per_hit": 138,
       "range": 10,
       "type": "laser",
+      "class": "destroyers",
       "power": 305
     },
     "tier_10": {
@@ -78,6 +83,7 @@ export const baseStats = {
       "attack_per_hit": 351,
       "range": 10,
       "type": "missile",
+      "class": "destroyers",
       "power": 2776
     },
     "tier_11": {
@@ -91,6 +97,7 @@ export const baseStats = {
       "attack_per_hit": 388,
       "range": 10,
       "type": "laser",
+      "class": "destroyers",
       "power": 3203
     },
     "tier_12": {
@@ -104,6 +111,7 @@ export const baseStats = {
       "attack_per_hit": 409,
       "range": 10,
       "type": "missile",
+      "class": "destroyers",
       "power": 3660
     }
   },
@@ -119,6 +127,7 @@ export const baseStats = {
       "attack_per_hit": 409,
       "range": 15,
       "type": "kinetic",
+      "class": "cruisers",
       "power": 915
     },
     "tier_10": {
@@ -132,6 +141,7 @@ export const baseStats = {
       "attack_per_hit": 1238,
       "range": 15,
       "type": "laser",
+      "class": "cruisers",
       "power": 8327
     },
     "tier_11": {
@@ -145,6 +155,7 @@ export const baseStats = {
       "attack_per_hit": 1148,
       "range": 15,
       "type": "kinetic",
+      "class": "cruisers",
       "power": 9608
     },
     "tier_12": {
@@ -158,6 +169,7 @@ export const baseStats = {
       "attack_per_hit": 1444,
       "range": 15,
       "type": "laser",
+      "class": "cruisers",
       "power": 10980
     }
   }

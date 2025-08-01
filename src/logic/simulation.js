@@ -7,7 +7,7 @@ import {
 
 function restraintMultiplier(f1Class, f2Class) {
   if (f1Class === f2Class) return 1; // Tie
-
+  
   const winMap = {
     frigates: 'cruisers',
     cruisers: 'destroyers',
