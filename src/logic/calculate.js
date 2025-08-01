@@ -1,3 +1,4 @@
+// calculate.js
 import { findFinalScore, Fleet, doBattle } from './simulation.js';
 
 export function optimize(consoleLog, graph, gtype, f1BaseStat, f1Stats, statIncrease, basicBaseStat, basicFleetStat, startingLeadership = 1) {
@@ -27,7 +28,6 @@ export function compareStats(consoleLog, graph, gtype, f1BaseStat, f1Stats, stat
         const oldVal = newStats[stat] ?? 0;
         const delta = deltaFleetStat[stat];
         newStats[stat] = oldVal + delta;
-        console.log(`+${delta} ${stat} (${oldVal} → ${newStats[stat]})`);
     }
 
     // Deep clone and apply delta to fleetBaseStat
@@ -36,7 +36,6 @@ export function compareStats(consoleLog, graph, gtype, f1BaseStat, f1Stats, stat
         const oldVal = newBaseStats[stat] ?? 0;
         const newVal = deltaFleetBaseStat[stat];
         newBaseStats[stat] = newVal;
-        console.log(`+$ (base) ${stat} (${oldVal} → ${newVal} )`);
     }
 
     const score = findFinalScore(newBaseStats, newStats, basicFleetStat, basicBaseStat, 1.1, startingLeadership);

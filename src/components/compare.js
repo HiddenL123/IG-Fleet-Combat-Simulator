@@ -1,9 +1,9 @@
-import { Fleet } from './fleet.js';
+import { FleetUI } from './fleet.js';
 
 export class CompareUI {
   /**
-   * @param {Fleet} fleet1
-   * @param {Fleet} fleet2
+   * @param {FleetUI} fleet1
+   * @param {FleetUI} fleet2
    * @param {(elements: HTMLElement[]) => HTMLElement} wrapperFn
    */
   constructor(fleet1, fleet2, wrapperFn) {
@@ -54,8 +54,8 @@ export class CompareUI {
   addPreset() {
     this.comparePresetCount++;
 
-    // Create new Fleet preset
-    const newPreset = new Fleet(`Stats Change Preset`);
+    // Create new FleetUI preset
+    const newPreset = new FleetUI(`Stats Change Preset`);
 
     // Create a wrapper div to hold the preset UI and the remove button horizontally
     const presetWrapper = document.createElement('div');

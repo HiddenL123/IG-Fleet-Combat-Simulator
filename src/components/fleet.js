@@ -10,7 +10,7 @@ const FLEET_STATS = [
 ];
 
 // Class representing one fleet input form
-export class Fleet {
+export class FleetUI {
   constructor(name) {
     this.name = name;
     this.inputs = {};

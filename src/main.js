@@ -1,3 +1,4 @@
+// main.js
 import { createFeatureSelector, calculate, createBoundingBoxWrapper } from './components/featureSelect.js';
 import { renderFeatureContent, fleet1Persistent, fleet2Persistent, compareUI } from './components/display.js';
 import { createOutputSection , consoleBox, canvas, graphState} from './components/output.js';
@@ -55,9 +56,23 @@ function switchTo(featureId) {
   app.appendChild(container);
 }
 
-function simulate(featureId) {
-  const { fleetstat: f1Stats, fleetbasestat: f1BaseStat } = getFleetInfo(fleet1Persistent) || {};
-  const { fleetstat: f2Stats, fleetbasestat: f2BaseStat } = getFleetInfo(fleet2Persistent) || {};
+function simulate(featureId) 
+{
+  if (!fleet1Persistent || !fleet2Persistent) {
+    console.warn('Fleet data not ready — skipping simulate');
+    return;
+  }
+  const info1 = getFleetInfo(fleet1Persistent);
+  const info2 = getFleetInfo(fleet2Persistent);
+
+  if (!info1 || !info2) {
+    console.error('Fleet data missing');
+    return;
+  }
+  
+
+  const { fleetstat: f1Stats, fleetbasestat: f1BaseStat } = info1;
+  const { fleetstat: f2Stats, fleetbasestat: f2BaseStat } = info2;
 
   if (!f1Stats || !f1BaseStat || !f2Stats || !f2BaseStat) {
     console.error('Fleet data missing');

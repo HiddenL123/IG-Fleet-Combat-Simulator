@@ -1,7 +1,7 @@
-import { Fleet } from './fleet.js';
+import { FleetUI } from './fleet.js';
 import { CompareUI } from './compare.js';
-export let fleet1Persistent = null;
-export let fleet2Persistent = null;
+export let fleet1Persistent = new FleetUI();
+export let fleet2Persistent = new FleetUI();
 export let compareUI = null;
 
 export function renderFeatureContent(featureId) {
@@ -30,10 +30,10 @@ function switchToBattle(content) {
   fleetContainer.className = 'flex flex-col sm:flex-row gap-6 sm:justify-center max-w-[680px] mx-auto';
 
   if (!fleet1Persistent) {
-    fleet1Persistent = new Fleet("Fleet 1");
+    fleet1Persistent = new FleetUI("Fleet 1");
   }
   if (!fleet2Persistent) {
-    fleet2Persistent = new Fleet("Fleet 2");
+    fleet2Persistent = new FleetUI("Fleet 2");
   } else{
     fleet2Persistent.changeName("Fleet 2");
   }
@@ -49,10 +49,10 @@ function switchToBattle(content) {
 
 function switchToOptimize(content) {
   if (!fleet1Persistent) {
-    fleet1Persistent = new Fleet("Fleet 1");
+    fleet1Persistent = new FleetUI("Fleet 1");
   }
   if (!fleet2Persistent) {
-    fleet2Persistent = new Fleet("Opponent Fleet");
+    fleet2Persistent = new FleetUI("Opponent Fleet");
   } else {
     fleet2Persistent.changeName("Opponent Fleet");
   }
@@ -67,10 +67,10 @@ function switchToOptimize(content) {
 
 function switchToCompare(content) {
   if (!fleet1Persistent) {
-    fleet1Persistent = new Fleet("Fleet 1");
+    fleet1Persistent = new FleetUI("Fleet 1");
   }
   if (!fleet2Persistent) {
-    fleet2Persistent = new Fleet("Opponent Fleet");
+    fleet2Persistent = new FleetUI("Opponent Fleet");
   } else {
     fleet2Persistent.changeName("Opponent Fleet");
   }
