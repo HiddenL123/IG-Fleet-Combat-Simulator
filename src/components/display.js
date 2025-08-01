@@ -31,6 +31,8 @@ function switchToBattle(content) {
 
   if (!fleet1Persistent) {
     fleet1Persistent = new FleetUI("Fleet 1");
+  } else {
+    fleet1Persistent.changeName("Fleet 1");
   }
   if (!fleet2Persistent) {
     fleet2Persistent = new FleetUI("Fleet 2");
@@ -50,6 +52,8 @@ function switchToBattle(content) {
 function switchToOptimize(content) {
   if (!fleet1Persistent) {
     fleet1Persistent = new FleetUI("Fleet 1");
+  } else {
+    fleet1Persistent.changeName("Fleet 1");
   }
   if (!fleet2Persistent) {
     fleet2Persistent = new FleetUI("Opponent Fleet");
@@ -68,7 +72,8 @@ function switchToOptimize(content) {
 function switchToCompare(content) {
   if (!fleet1Persistent) {
     fleet1Persistent = new FleetUI("Fleet 1");
-  }
+  } else {}
+    fleet1Persistent.changeName("Fleet 1");
   if (!fleet2Persistent) {
     fleet2Persistent = new FleetUI("Opponent Fleet");
   } else {
