@@ -1,6 +1,6 @@
 import { findFinalScore, Fleet, doBattle } from './simulation.js';
 
-export function optimize(consoleLog, graph, gtypef1BaseStat, f1Stats, statIncrease, basicBaseStat, basicFleetStat, startingLeadership = 30) {
+export function optimize(consoleLog, graph, gtype, f1BaseStat, f1Stats, statIncrease, basicBaseStat, basicFleetStat, startingLeadership = 1) {
   const baseScore = findFinalScore(f1BaseStat, f1Stats, basicFleetStat, basicBaseStat, 1.1, startingLeadership, graph, gtype);
   logToConsole(consoleLog, 'base score: ' + baseScore);
 
@@ -13,7 +13,7 @@ export function optimize(consoleLog, graph, gtypef1BaseStat, f1Stats, statIncrea
   }
 }
 
-export function compareStats(consoleLog, graph, gtype, f1BaseStat, f1Stats, statsChanges, basicBaseStat, basicFleetStat, startingLeadership = 30) {
+export function compareStats(consoleLog, graph, gtype, f1BaseStat, f1Stats, statsChanges, basicBaseStat, basicFleetStat, startingLeadership = 1) {
   const baseScore = findFinalScore(f1BaseStat, f1Stats, basicFleetStat, basicBaseStat, 1.1, startingLeadership, graph, gtype);
   logToConsole(consoleLog, 'base score: ' + baseScore);
 

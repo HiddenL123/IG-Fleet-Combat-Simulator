@@ -55,7 +55,7 @@ export class CompareUI {
     this.comparePresetCount++;
 
     // Create new Fleet preset
-    const newPreset = new Fleet(`Stats Change Preset ${this.comparePresetCount}`);
+    const newPreset = new Fleet(`Stats Change Preset`);
 
     // Create a wrapper div to hold the preset UI and the remove button horizontally
     const presetWrapper = document.createElement('div');
