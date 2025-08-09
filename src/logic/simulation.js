@@ -1,4 +1,5 @@
 import { 
+  calcArmor,
   calcArmorDamageReduction, 
   calcDamageReduction, 
   totalOutputAndTime, 
@@ -40,13 +41,16 @@ export class Fleet {
     this.shieldValue = this.totalShieldValue;
 
     this.hpValue = baseStat.hp * addedPercent(statsBonus.hp);
-    this.armorMultiplier = calcArmorDamageReduction(statsBonus, baseStat);
+    this.armor = calcArmor(statsBonus, baseStat);
     this.damageReductionCoefficient = calcDamageReduction(statsBonus);
 
     this.alive = true;
     this.fsDamage = fsOutputPerSecond;
     this.weaponType = baseStat.type;
     this.shipType = baseStat.class;
+
+    this.baseStat = baseStat;
+    this.bonusStats = statsBonus;
   }
 
   takeDamage(attackValue, weaponType, shipType = 'None') {
@@ -55,12 +59,12 @@ export class Fleet {
     const newAttackValue = (attackValue / this.damageReductionCoefficient) * restraintBonus;
 
     let shieldDamage = 1;
-    let armorDamage = 1;
+    let armorIgnore = 0;
 
     if (weaponType === 'missile') {
       shieldDamage = 1.3;
     } else if (weaponType === 'laser') {
-      armorDamage = 1.3;
+      armorIgnore = 30;
       shieldDamage = 0.85;
     }
 
@@ -78,7 +82,7 @@ export class Fleet {
         this.shieldValue = 0;
       }
     }
-    this.countUnrounded -= (hpDamage * armorDamage) / (this.hpValue * this.armorMultiplier);
+    this.countUnrounded -= (hpDamage) / (this.hpValue * calcArmorDamageReduction(calcArmor(this.bonusStats, this.baseStat, -armorIgnore)));
     this.count = Math.ceil(this.countUnrounded);
 
     if (this.count <= 0) {

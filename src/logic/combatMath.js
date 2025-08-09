@@ -16,9 +16,13 @@ export function totalOutputAndTime(rowPercent, baseStat) {
 }
 
 // Calculate armor-based damage reduction coefficient
-export function calcArmorDamageReduction(rowPercent, baseStat) {
-  const armorScaled = addedPercent(rowPercent.armor) * baseStat.armor;
-  const armorCoef = (12000 + armorScaled) / 12000;
+export function calcArmor(rowPercent, baseStat, bonus = 0) {
+  const armorScaled = addedPercent(rowPercent.armor + bonus) * baseStat.armor;
+  return armorScaled
+}
+
+export function calcArmorDamageReduction(armor) {
+  const armorCoef = (12000 + armor) / 12000;
   return armorCoef;
 }
 
